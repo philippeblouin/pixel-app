@@ -89,8 +89,8 @@ def login():
     if form.validate_on_submit():
 
         # assign form data to variables
-        username = request.form.get('nom utilisateur', '', type=str)
-        password = request.form.get('mot de passe', '', type=str)
+        username = request.form.get('username', '', type=str)
+        password = request.form.get('password', '', type=str) 
 
         # filter User out of database through username
         user = Users.query.filter_by(user=username).first()
@@ -106,11 +106,6 @@ def login():
             msg = "Unknown user"
 
     return render_template( 'accounts/login.html', form=form, msg=msg )
-
-@app.route('/user/<name>')
-def user(name):
-    monuser = Users.query.filter_by(monuser=username).first()
-    return render_template('user.html', name=monuser)
 
 # App main route + generic routing
 @app.route('/', defaults={'path': 'index.html'})
