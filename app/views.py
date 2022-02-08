@@ -131,6 +131,21 @@ def index(path):
         return render_template('home/page-500.html'), 500
 
 
+@app.route('/', methods=['GET','POST'], defaults={'path': 'echantillon.html'})
+@app.route('/<path>')
+def echantillon(path):
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    try:
+        if not path.endswith('.html'):
+            path += '.html'
+        return render_template('home/', + path)
+
+    except TemplateNotFound:
+        return render_template('home/page-400.html'), 400
+    except:
+        return render_template('home/page-500.html'), 500
+
 # Return sitemap
 @app.route('/sitemap.xml')
 def sitemap():
@@ -140,3 +155,4 @@ def sitemap():
 @app.route('/monuser.html')
 def monuser():
     return render_template('home/monuser.html')
+

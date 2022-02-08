@@ -1,0 +1,4 @@
+Ancienne valeur du back ground
+.bg-primary {
+  background-color: #242e4c !important; }
+

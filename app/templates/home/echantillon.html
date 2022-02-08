@@ -1,0 +1,70 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Échantillons des déclaration {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<!-- Faire la construction des tables à l'aide de JSON -->
+
+    <main>
+
+        {% include 'includes/preloader.html' %}
+
+        <!-- End of Hero -->
+        <div class="section section-md">
+            <div class="container">
+                <div class="row justify-content-left">
+                    <div class="col-lg-12">
+                        <div class="mb-4">
+                            <span class="h5">Table des déclarations</span>
+                        </div>
+                        <div class="mb-5">
+                            <table class="table">
+                                <tr>
+                                    <th scope="col" id="declaration">Déclaration principale</th>
+                                    <th scope="col" id="dhm_publ">Date</th>
+                                    <th scope="col" id="no_inscr">Inscriptions</th>
+                                    <th scope="col" id="nb_mandat">Nb Mandat</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row" id="Principale" rowspan="2">E21-LE00003</th>
+                                    <th scope="row" id="Inscription" headers="declaration inscription">E21-LE00003</th>
+                                    <td headers="E21-LE00003">5</td>
+                                    <td headers="E20-LE00022">4</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" id="Cheetham" headers="firstyear teacher">A. Cheetham</th>
+                                    <td headers="firstyear Cheetham males">7</td>
+                                    <td headers="firstyear Cheetham females">9</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" id="secondyear" rowspan="3">Second Year</th>
+                                    <th scope="row" id="Lam" headers="secondyear teacher">M. Lam</th>
+                                    <td headers="secondyear Lam males">3</td>
+                                    <td headers="secondyear Lam females">9</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" id="Crossy" headers="secondyear teacher">S. Crossy</th>
+                                    <td headers="secondyear Crossy males">4</td>
+                                    <td headers="secondyear Crossy females">3</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" id="Forsyth" headers="secondyear teacher">A. Forsyth</th>
+                                    <td headers="secondyear Forsyth males">6</td>
+                                    <td headers="secondyear Forsyth females">9</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
